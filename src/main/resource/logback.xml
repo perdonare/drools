@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+	<property name="context_name" value="dubbo" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- 日志输出编码 -->
+		<Encoding>UTF-8</Encoding>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+			<pattern> %logger{50} - %msg%n</pattern>
+
+			<!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+			<!-- 【系统时间】 【线程号】 【日志级别】 【机构号】 【对账日期】【对账类型】
+                【执行类】（去掉包路径） -->
+			<pattern>%logger{0} - %msg%n
+			</pattern>
+		</layout>
+	</appender>
+
+	<root level="info">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>
